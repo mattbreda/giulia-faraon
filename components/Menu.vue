@@ -10,7 +10,7 @@ const menuVoices = computed(() => [
   {
     label: "Home",
     path: "/",
-    color: "red"
+    color: "home"
   },
   {
     label: "About",

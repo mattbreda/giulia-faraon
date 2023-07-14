@@ -5,17 +5,17 @@
 
 @font-face {
   font-family: "PPEditorialNew";
-  src: url("../../public/fonts/PPEditorialNew-Ultralight.woff");
+  src: url("/fonts/PPEditorialNew-Ultralight.woff");
 }
 
 @font-face {
   font-family: "TWKLausanne-200";
-  src: url("../../public/fonts/TWKLausanne-200.woff2");
+  src: url("/fonts/TWKLausanne-200.woff2");
 }
 
 @font-face {
   font-family: "TWKLausanne-400";
-  src: url("../../public/fonts/TWKLausanne-400.woff2");
+  src: url("/fonts/TWKLausanne-400.woff2");
 }
 
 body {

@@ -1,5 +1,6 @@
 <template>
   <p>single talent</p>
+  {{route}}
   {{project.data ? project.data : 'Error 404'}}
 </template>
 

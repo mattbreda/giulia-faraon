@@ -1,7 +1,7 @@
 <template>
   <div
     class="ml-4 lg:text-titolo-h2 font-TWKLausanneULight py-1.5 px-4 rounded-2xl shadow-menu-buttons transition-all duration-600"
-    :class="[ activeColor ? `bg-${color}`:'bg-white', colorClass,]"
+    :class="[ activeColor ? `background-${color}`:'bg-white', colorClass,]"
   >
     {{ label }} 
   </div>
@@ -15,8 +15,8 @@ const props = defineProps({
   path: { type: String, default: ""}
 });
 const colorClass = computed(() => {
-  if (props.color === "red") {
-    return "hover:bg-red";
+  if (props.color === "home") {
+    return "hover:bg-home";
   } else if (props.color === "green") {
     return "hover:bg-green";
   } else if (props.color === "blue") {
@@ -29,3 +29,14 @@ const activeColor = computed(() => {
   return route.fullPath === props.path
 })
 </script>
+<style>
+.background-home {
+  @apply bg-home
+}
+.background-green {
+  @apply bg-green
+}
+.background-blue {
+  @apply bg-blue
+}
+</style>

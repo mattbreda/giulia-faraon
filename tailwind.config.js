@@ -21,6 +21,7 @@ module.exports = {
       colors: {
         'purple': '#767BA9',
         'red': '#FE695F',
+        'home': '#FE695F',
         'pippo': '#FE695F',
         'green': '#D3EDC6',
         'blue': '#E4E7FF',

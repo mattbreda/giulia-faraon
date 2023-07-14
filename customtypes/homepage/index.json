@@ -19,7 +19,12 @@
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": { "choices": { "about_card": { "type": "SharedSlice" } } }
+        "config": {
+          "choices": {
+            "about_card": { "type": "SharedSlice" },
+            "project_card": { "type": "SharedSlice" }
+          }
+        }
       }
     },
     "SEO & Metadata": {

@@ -67,7 +67,7 @@ interface HomepageDocumentData {
  * Slice for *Homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = AboutCardSlice;
+type HomepageDocumentDataSlicesSlice = AboutCardSlice | ProjectCardSlice;
 /**
  * Homepage document from Prismic
  *
@@ -124,7 +124,137 @@ type PageDocumentDataSlicesSlice = RichTextSlice | AboutCardSlice;
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = HomepageDocument | PageDocument;
+/** Content for Project documents */
+interface ProjectDocumentData {
+  /**
+   * Title field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  title: prismic.RichTextField;
+  /**
+   * Description field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  description: prismic.RichTextField;
+  /**
+   * Type field in *Project*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Tipologia di progetto (di default setta Editorial)
+   * - **Default Value**: Editorial
+   * - **API ID Path**: project.type
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/select
+   *
+   */
+  type: prismic.SelectField<
+    "Editorial" | "Digital" | "Brand Identity",
+    "filled"
+  >;
+  /**
+   * External Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.external_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  external_image: prismic.ImageField<never>;
+  /**
+   * Is In Homepage field in *Project*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: project.is_in_homepage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+   *
+   */
+  is_in_homepage: prismic.BooleanField;
+  /**
+   * Slice Zone field in *Project*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<ProjectDocumentDataSlicesSlice>;
+  /**
+   * Meta Description field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: project.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_description: prismic.KeyTextField;
+  /**
+   * Meta Image field in *Project*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *Project*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: project.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+}
+/**
+ * Slice for *Project → Slice Zone*
+ *
+ */
+type ProjectDocumentDataSlicesSlice = never;
+/**
+ * Project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProjectDocumentData>,
+    "project",
+    Lang
+  >;
+export type AllDocumentTypes =
+  | HomepageDocument
+  | PageDocument
+  | ProjectDocument;
 /**
  * Primary content in AboutCard → Primary
  *
@@ -180,6 +310,52 @@ type AboutCardSliceVariation = AboutCardSliceDefault;
 export type AboutCardSlice = prismic.SharedSlice<
   "about_card",
   AboutCardSliceVariation
+>;
+/**
+ * Primary content in ProjectCard → Primary
+ *
+ */
+interface ProjectCardSliceDefaultPrimary {
+  /**
+   * Project field in *ProjectCard → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_card.primary.project
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  project: prismic.ContentRelationshipField<"project">;
+}
+/**
+ * Default variation for ProjectCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectCardSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *ProjectCard*
+ *
+ */
+type ProjectCardSliceVariation = ProjectCardSliceDefault;
+/**
+ * ProjectCard Shared Slice
+ *
+ * - **API ID**: `project_card`
+ * - **Description**: `ProjectCard`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectCardSlice = prismic.SharedSlice<
+  "project_card",
+  ProjectCardSliceVariation
 >;
 /**
  * Primary content in RichText → Primary
@@ -242,11 +418,18 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PageDocument,
+      ProjectDocumentData,
+      ProjectDocumentDataSlicesSlice,
+      ProjectDocument,
       AllDocumentTypes,
       AboutCardSliceDefaultPrimary,
       AboutCardSliceDefault,
       AboutCardSliceVariation,
       AboutCardSlice,
+      ProjectCardSliceDefaultPrimary,
+      ProjectCardSliceDefault,
+      ProjectCardSliceVariation,
+      ProjectCardSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceDefault,
       RichTextSliceVariation,

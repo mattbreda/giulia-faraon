@@ -1,0 +1,3 @@
+<template>
+  Ciao! WORKSSS
+</template>

@@ -4,7 +4,7 @@ import { repositoryName } from './slicemachine.config.json'
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Prismic + Nuxt Minimal Starter',
+      title: 'Giulia Faraon',
       htmlAttrs: {
         lang: 'en',
       },
@@ -15,10 +15,10 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    }
+    },
   },
 
-  modules: ['@nuxtjs/prismic'],
+  modules: ['@nuxtjs/prismic', '@nuxt/image'],
 
   prismic: {
     endpoint: 'giulia-faraon',
@@ -37,4 +37,11 @@ export default defineNuxtConfig({
       ]
     }
   },
+  css: ["@/assets/css/main.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  }
 })

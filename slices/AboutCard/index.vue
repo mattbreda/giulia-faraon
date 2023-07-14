@@ -2,19 +2,13 @@
   <section
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
-  >
-  <!-- <div class="">
-      <PrismicRichText :field="props.slice.primary.title" />
-      <PrismicRichText :field="props.slice.primary.description" />
-
-   </div> -->
-   <H1>test</H1>
-    <PrismicRichText :field="slice.primary.title" />
-    <PrismicRichText :field="slice.primary.description" />
-
-    Placeholder component for about_card (variation: {{ slice.variation }})
-    Slices
-  </section>
+    class="bg-blue rounded-lg shadow-simple p-4"
+  > 
+    <h2 class="text-titolo-h2 text-purple font-TWKLausanneULight lg:pb-2">About</h2>
+    <PrismicRichText :field="slice.primary.title" class="text-titolo-h2 font-TWKLausanneLight"/>
+    <PrismicRichText :field="slice.primary.description" class="text-titolo-h2 font-TWKLausanneULight lg:mb-6" />
+    <NuxtLink to="/about" class="text-paragraph font-TWKLausanneLight">Approfondisci +</NuxtLink>
+  </section> 
 </template>
 <script setup lang="ts">
 import { Content } from "@prismicio/client";

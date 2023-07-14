@@ -1,6 +1,6 @@
 <template>
   <p>single talent</p>
-  {{project.data ? project.data : 'BOOOOH'}}
+  {{project.data ? project.data : 'Error 404'}}
 </template>
 
 <script setup>/* 

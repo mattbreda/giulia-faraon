@@ -1,6 +1,7 @@
 <template>
-  <div class="w-screen h-screen max-h-screen grid grid-cols-12 gap-6 p-8">
-    <div class="col-start-1 col-span-3 h-full overflow-y-auto px-[4px]">
+  <div class="w-screen h-screen max-h-screen grid grid-cols-12 gap-6 px-8">
+    <div class="col-start-1 col-span-3 h-full overflow-y-auto px-[4px] relative pt-[400px]">
+      <GiuliaHeader />
       <SliceZone
         wrapper="main"
         :slices="page?.data.slices ?? []"
@@ -11,10 +12,10 @@
         :content="card"
         :key="card.id"
       />
-
+      <PictureCard />
     </div>
-    <div class="col-start-4 col-span-9 h-full ">
-      <div class="w-full h-screen shadow-simple-inner h-full rounded-lg overflow-hidden">
+    <div class="col-start-4 col-span-9 h-full py-8">
+      <div class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden">
         <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full"/>
       </div>
     </div>

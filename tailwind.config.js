@@ -10,13 +10,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'white-linear': 'linear-gradient(180deg, #FFFFFF 60.16%, rgba(255, 255, 255, 0) 92.97%)'
+      },
       boxShadow: {
         'simple': '0px 1px 5px 0px #0000004D',
-        'simple-inner': '0px 2px 2px 0px #00000040 inset'
+        'menu-buttons': '0px 2px 4px 0px #00000040',
+        'simple-inner': '0px 2px 2px 0px #00000040 inset',
       },
       colors: {
         'purple': '#767BA9',
         'red': '#FE695F',
+        'pippo': '#FE695F',
         'green': '#D3EDC6',
         'blue': '#E4E7FF',
         'yellow': '#FFF6A3',

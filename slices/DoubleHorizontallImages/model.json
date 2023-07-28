@@ -1,0 +1,35 @@
+{
+  "id": "double_horizontall_images",
+  "type": "SharedSlice",
+  "name": "DoubleHorizontallImages",
+  "description": "DoubleHorizontallImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "prima_immagine": {
+          "type": "Image",
+          "config": {
+            "label": "Prima Immagine",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "seconda_immagine": {
+          "type": "Image",
+          "config": {
+            "label": "Seconda Immagine",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

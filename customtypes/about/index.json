@@ -1,85 +1,46 @@
 {
-  "id": "project",
-  "label": "Project",
+  "id": "about",
+  "label": "About",
   "format": "page",
-  "repeatable": true,
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
-      "uid": { "config": { "label": "UID" }, "type": "UID" },
-      "title": {
+      "testo_come_posso_aiutarti": {
         "type": "StructuredText",
         "config": {
-          "label": "Title",
+          "label": "Testo come posso aiutarti",
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "sub_title": {
+      "testo_di_cosa_mi_occupo": {
         "type": "StructuredText",
         "config": {
-          "label": "Sub title",
+          "label": "Testo di cosa mi occupo",
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "description": {
+      "testo_side_project": {
         "type": "StructuredText",
         "config": {
-          "label": "Description (x card piccoline)",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,heading2"
-        }
-      },
-      "long_text": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Long text (x pagina progetto)",
+          "label": "testo side project",
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "type": {
-        "type": "Select",
-        "config": {
-          "label": "Type",
-          "placeholder": "Tipologia di progetto (di default setta Editorial)",
-          "options": ["Editorial", "Digital", "Brand Identity"],
-          "default_value": "Editorial"
-        }
-      },
-      "external_image": {
+      "foto": {
         "type": "Image",
-        "config": {
-          "label": "External Image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "is_in_homepage": {
-        "type": "Boolean",
-        "config": {
-          "label": "Is In Homepage",
-          "default_value": false,
-          "placeholder_true": "true",
-          "placeholder_false": "false"
-        }
+        "config": { "label": "Foto", "constraint": {}, "thumbnails": [] }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "double_horizontall_images": { "type": "SharedSlice" },
-            "double_vertical_images": { "type": "SharedSlice" },
-            "image_full": { "type": "SharedSlice" },
-            "video": { "type": "SharedSlice" }
-          }
-        }
+        "config": { "choices": {} }
       }
     },
     "SEO & Metadata": {

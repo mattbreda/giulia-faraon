@@ -12,7 +12,7 @@
         :content="card"
         :key="card.id"
       />
-      <PhotoCard key="photo-card1"/>
+      <PhotoCard key="photo-card1" class="photo-card"/>
     </div>
     <div class="col-start-4 col-span-9 h-full py-8 max-h-screen">
       <div class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden">

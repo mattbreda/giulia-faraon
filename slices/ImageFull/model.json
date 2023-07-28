@@ -1,0 +1,23 @@
+{
+  "id": "image_full",
+  "type": "SharedSlice",
+  "name": "ImageFull",
+  "description": "ImageFull",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "immagine": {
+          "type": "Image",
+          "config": { "label": "Immagine", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

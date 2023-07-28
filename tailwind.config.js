@@ -11,7 +11,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'white-linear': 'linear-gradient(180deg, #FFFFFF 60.16%, rgba(255, 255, 255, 0) 92.97%)'
+        'white-linear': 'linear-gradient(180deg, #FFFFFF 60.16%, rgba(255, 255, 255, 0) 92.97%)',
+        'about-linear':'linear-gradient(180deg, #FFFFFF 0%, #E4E7FF 100%)',
+        'project-linear': 'linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)'
       },
       boxShadow: {
         'simple': '0px 1px 5px 0px #0000004D',

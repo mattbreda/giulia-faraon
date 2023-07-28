@@ -1,0 +1,35 @@
+{
+  "id": "double_vertical_images",
+  "type": "SharedSlice",
+  "name": "DoubleVerticalImages",
+  "description": "DoubleVerticalImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "prima_immagine": {
+          "type": "Image",
+          "config": {
+            "label": "Prima Immagine",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "seconda_immagine": {
+          "type": "Image",
+          "config": {
+            "label": "Seconda Immagine",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<template>
+  <footer class="w-full flex flex-col mt-8">
+    <a
+      href="mailto:hello@giuliafaraon.com"
+      class="text-white mix-blend-difference text-[56px] font-PPEditorial"
+      >hello@giuliafaraon.com</a
+    >
+    <div class="font-TWKLausanneULight text-titolo-h3">© 2023</div>
+  </footer>
+</template>

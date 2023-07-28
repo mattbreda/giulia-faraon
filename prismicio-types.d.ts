@@ -5,6 +5,113 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for About documents */
+interface AboutDocumentData {
+  /**
+   * Testo come posso aiutarti field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.testo_come_posso_aiutarti
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  testo_come_posso_aiutarti: prismic.RichTextField;
+  /**
+   * Testo di cosa mi occupo field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.testo_di_cosa_mi_occupo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  testo_di_cosa_mi_occupo: prismic.RichTextField;
+  /**
+   * testo side project field in *About*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.testo_side_project
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  testo_side_project: prismic.RichTextField;
+  /**
+   * Foto field in *About*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.foto
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  foto: prismic.ImageField<never>;
+  /**
+   * Slice Zone field in *About*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismic.SliceZone<AboutDocumentDataSlicesSlice>;
+  /**
+   * Meta Description field in *About*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: about.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_description: prismic.KeyTextField;
+  /**
+   * Meta Image field in *About*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  meta_image: prismic.ImageField<never>;
+  /**
+   * Meta Title field in *About*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: about.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  meta_title: prismic.KeyTextField;
+}
+/**
+ * Slice for *About → Slice Zone*
+ *
+ */
+type AboutDocumentDataSlicesSlice = never;
+/**
+ * About document from Prismic
+ *
+ * - **API ID**: `about`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
   /**
@@ -138,7 +245,18 @@ interface ProjectDocumentData {
    */
   title: prismic.RichTextField;
   /**
-   * Description field in *Project*
+   * Sub title field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.sub_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  sub_title: prismic.RichTextField;
+  /**
+   * Description (x card piccoline) field in *Project*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -148,6 +266,17 @@ interface ProjectDocumentData {
    *
    */
   description: prismic.RichTextField;
+  /**
+   * Long text (x pagina progetto) field in *Project*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.long_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+   *
+   */
+  long_text: prismic.RichTextField;
   /**
    * Type field in *Project*
    *
@@ -235,7 +364,11 @@ interface ProjectDocumentData {
  * Slice for *Project → Slice Zone*
  *
  */
-type ProjectDocumentDataSlicesSlice = never;
+type ProjectDocumentDataSlicesSlice =
+  | DoubleHorizontallImagesSlice
+  | DoubleVerticalImagesSlice
+  | ImageFullSlice
+  | VideoSlice;
 /**
  * Project document from Prismic
  *
@@ -252,6 +385,7 @@ export type ProjectDocument<Lang extends string = string> =
     Lang
   >;
 export type AllDocumentTypes =
+  | AboutDocument
   | HomepageDocument
   | PageDocument
   | ProjectDocument;
@@ -310,6 +444,165 @@ type AboutCardSliceVariation = AboutCardSliceDefault;
 export type AboutCardSlice = prismic.SharedSlice<
   "about_card",
   AboutCardSliceVariation
+>;
+/**
+ * Primary content in DoubleHorizontallImages → Primary
+ *
+ */
+interface DoubleHorizontallImagesSliceDefaultPrimary {
+  /**
+   * Prima Immagine field in *DoubleHorizontallImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: double_horizontall_images.primary.prima_immagine
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  prima_immagine: prismic.ImageField<never>;
+  /**
+   * Seconda Immagine field in *DoubleHorizontallImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: double_horizontall_images.primary.seconda_immagine
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  seconda_immagine: prismic.ImageField<never>;
+}
+/**
+ * Default variation for DoubleHorizontallImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DoubleHorizontallImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DoubleHorizontallImagesSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *DoubleHorizontallImages*
+ *
+ */
+type DoubleHorizontallImagesSliceVariation =
+  DoubleHorizontallImagesSliceDefault;
+/**
+ * DoubleHorizontallImages Shared Slice
+ *
+ * - **API ID**: `double_horizontall_images`
+ * - **Description**: `DoubleHorizontallImages`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DoubleHorizontallImagesSlice = prismic.SharedSlice<
+  "double_horizontall_images",
+  DoubleHorizontallImagesSliceVariation
+>;
+/**
+ * Primary content in DoubleVerticalImages → Primary
+ *
+ */
+interface DoubleVerticalImagesSliceDefaultPrimary {
+  /**
+   * Prima Immagine field in *DoubleVerticalImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: double_vertical_images.primary.prima_immagine
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  prima_immagine: prismic.ImageField<never>;
+  /**
+   * Seconda Immagine field in *DoubleVerticalImages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: double_vertical_images.primary.seconda_immagine
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  seconda_immagine: prismic.ImageField<never>;
+}
+/**
+ * Default variation for DoubleVerticalImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DoubleVerticalImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<DoubleVerticalImagesSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *DoubleVerticalImages*
+ *
+ */
+type DoubleVerticalImagesSliceVariation = DoubleVerticalImagesSliceDefault;
+/**
+ * DoubleVerticalImages Shared Slice
+ *
+ * - **API ID**: `double_vertical_images`
+ * - **Description**: `DoubleVerticalImages`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DoubleVerticalImagesSlice = prismic.SharedSlice<
+  "double_vertical_images",
+  DoubleVerticalImagesSliceVariation
+>;
+/**
+ * Primary content in ImageFull → Primary
+ *
+ */
+interface ImageFullSliceDefaultPrimary {
+  /**
+   * Immagine field in *ImageFull → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_full.primary.immagine
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  immagine: prismic.ImageField<never>;
+}
+/**
+ * Default variation for ImageFull Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageFullSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageFullSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *ImageFull*
+ *
+ */
+type ImageFullSliceVariation = ImageFullSliceDefault;
+/**
+ * ImageFull Shared Slice
+ *
+ * - **API ID**: `image_full`
+ * - **Description**: `ImageFull`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageFullSlice = prismic.SharedSlice<
+  "image_full",
+  ImageFullSliceVariation
 >;
 /**
  * Primary content in ProjectCard → Primary
@@ -403,6 +696,49 @@ export type RichTextSlice = prismic.SharedSlice<
   "rich_text",
   RichTextSliceVariation
 >;
+/**
+ * Primary content in Video → Primary
+ *
+ */
+interface VideoSliceDefaultPrimary {
+  /**
+   * Video Url field in *Video → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+   *
+   */
+  video_url: prismic.EmbedField;
+}
+/**
+ * Default variation for Video Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *Video*
+ *
+ */
+type VideoSliceVariation = VideoSliceDefault;
+/**
+ * Video Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: `Video`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type VideoSlice = prismic.SharedSlice<"video", VideoSliceVariation>;
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -412,6 +748,9 @@ declare module "@prismicio/client" {
   }
   namespace Content {
     export type {
+      AboutDocumentData,
+      AboutDocumentDataSlicesSlice,
+      AboutDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       HomepageDocument,
@@ -426,6 +765,18 @@ declare module "@prismicio/client" {
       AboutCardSliceDefault,
       AboutCardSliceVariation,
       AboutCardSlice,
+      DoubleHorizontallImagesSliceDefaultPrimary,
+      DoubleHorizontallImagesSliceDefault,
+      DoubleHorizontallImagesSliceVariation,
+      DoubleHorizontallImagesSlice,
+      DoubleVerticalImagesSliceDefaultPrimary,
+      DoubleVerticalImagesSliceDefault,
+      DoubleVerticalImagesSliceVariation,
+      DoubleVerticalImagesSlice,
+      ImageFullSliceDefaultPrimary,
+      ImageFullSliceDefault,
+      ImageFullSliceVariation,
+      ImageFullSlice,
       ProjectCardSliceDefaultPrimary,
       ProjectCardSliceDefault,
       ProjectCardSliceVariation,
@@ -434,6 +785,10 @@ declare module "@prismicio/client" {
       RichTextSliceDefault,
       RichTextSliceVariation,
       RichTextSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceDefault,
+      VideoSliceVariation,
+      VideoSlice,
     };
   }
 }

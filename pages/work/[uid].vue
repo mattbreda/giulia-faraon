@@ -3,7 +3,7 @@
     class="w-full bg-black text-white grid grid-cols-12 gap-6 px-8 min-h-screen h-full"
   >
     <div
-      class="col-start-1 col-span-2 max-h-screen h-full overflow-y-auto relative no-scrollbar"
+      class="col-start-1 col-span-2 max-h-screen h-full overflow-y-auto relative scroll-smooth no-scrollbar"
     >
       <div class="sticky top-0 pt-8 w-full bg-project-linear h-[40vh]">
         <h1 class="text-name font-PPEditorial">Giulia Faraon</h1>
@@ -15,7 +15,7 @@
       <ProjectDescription :content="project?.data" class="mb-8" />
     </div>
     <div
-      class="col-start-3 col-span-10 h-auto py-8 max-h-screen h-full overflow-y-auto no-scrollbar"
+      class="col-start-3 col-span-10 h-auto py-8 max-h-screen h-full overflow-y-auto scroll-smooth no-scrollbar"
     >
       <SliceZone
         wrapper="main"

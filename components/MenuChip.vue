@@ -1,6 +1,6 @@
 <template>
   <div
-    class="ml-4 lg:text-titolo-h2 font-TWKLausanneULight py-1.5 px-4 rounded-2xl shadow-menu-buttons transition-all duration-600"
+    class="lg:ml-4 text-titolo-h3 lg:text-titolo-h2 font-TWKLausanneULight py-1.5 px-4 rounded-2xl shadow-menu-buttons transition-all duration-600"
     :class="[ activeColor ? `background-${color}`:'bg-white', colorClass,]"
   >
     {{ label }} 
@@ -21,6 +21,8 @@ const colorClass = computed(() => {
     return "hover:bg-green";
   } else if (props.color === "blue") {
     return "hover:bg-blue";
+  } else if(props.color === "yellor") {
+    return "hover:bg-yellow"
   } else {
     return "hover:bg-green-400";
   }
@@ -38,5 +40,8 @@ const activeColor = computed(() => {
 }
 .background-blue {
   @apply bg-blue
+}
+.background-yellow {
+  @apply bg-yellow
 }
 </style>

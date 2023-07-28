@@ -1,8 +1,16 @@
 <template>
-  <div class="w-screen h-screen max-h-screen grid grid-cols-12 gap-6 px-8">
-    <div class="col-start-1 col-span-3 h-full overflow-y-auto px-[4px] relative pt-[400px]">
-      <GiuliaHeader />
-      <SliceZone
+  <div class="w-screen lg:h-screen lg:max-h-screen flex flex-col lg:grid lg:grid-cols-12 lg:gap-6 px-4 lg:px-8">
+    <div class="lg:col-start-1 lg:col-span-3 lg:h-full lg:overflow-y-auto lg:no-scrollbar lg:scroll-smooth px-[4px] relative">
+      <div class="lg:sticky  lg:top-0 max-lg:mb-20 lg:left-0 w-full">
+        <GiuliaHeader />
+      </div>
+      <div class="lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen">
+        <div class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden">
+          <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/>
+        </div>
+      </div>
+      <div class="w-full px-[4px] flex flex-col">
+        <SliceZone
         wrapper="main"
         :slices="page?.data.slices ?? []"
         :components="components"
@@ -13,8 +21,13 @@
         :key="card.id"
       />
       <PhotoCard key="photo-card1" class="photo-card"/>
+      <div class="py-12">
+        <a class="text-[2rem] font-PPEditorial" href="mailto:hello@giuliafaraon.com">hello@giuliafaraon.com</a>
+      </div>
+      </div>
+      
     </div>
-    <div class="col-start-4 col-span-9 h-full py-8 max-h-screen">
+    <div class="max-lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen">
       <div class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden">
         <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/>
       </div>

@@ -1,6 +1,7 @@
 <template>
-  <div class="w-full px-8">
-    <div v-if="categories.length" class="flex flex-row mt-[20vh]">
+  <div class="w-full px-4 lg:px-8">
+    <GiuliaHeader />
+    <div v-if="categories.length" class="flex flex-row pt-8 lg:pt-0">
       <SimpleChip
         label="All"
         @click="resetCategory"
@@ -18,13 +19,13 @@
     <TransitionGroup
       name="list"
       tag="div"
-      class="grid grid-cols-4 w-full gap-x-6"
+      class="flex flex-col lg:grid lg:grid-cols-4 w-full lg:gap-x-6"
     >
       <ProjectCardSimple
         v-for="card in filteredProjects"
         :content="card"
         :key="card.id"
-        class="max-w-[25vw] z-20"
+        class="w-full lg:max-w-[25vw] z-20"
       />
     </TransitionGroup>
   </div>

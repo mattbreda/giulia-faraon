@@ -368,7 +368,8 @@ type ProjectDocumentDataSlicesSlice =
   | DoubleHorizontallImagesSlice
   | DoubleVerticalImagesSlice
   | ImageFullSlice
-  | VideoSlice;
+  | VideoSlice
+  | ProjectVideoSlice;
 /**
  * Project document from Prismic
  *
@@ -651,6 +652,52 @@ export type ProjectCardSlice = prismic.SharedSlice<
   ProjectCardSliceVariation
 >;
 /**
+ * Primary content in ProjectVideo → Primary
+ *
+ */
+interface ProjectVideoSliceDefaultPrimary {
+  /**
+   * video field in *ProjectVideo → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_video.primary.video
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  video: prismic.LinkToMediaField;
+}
+/**
+ * Default variation for ProjectVideo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Default`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectVideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectVideoSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *ProjectVideo*
+ *
+ */
+type ProjectVideoSliceVariation = ProjectVideoSliceDefault;
+/**
+ * ProjectVideo Shared Slice
+ *
+ * - **API ID**: `project_video`
+ * - **Description**: `ProjectVideo`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ProjectVideoSlice = prismic.SharedSlice<
+  "project_video",
+  ProjectVideoSliceVariation
+>;
+/**
  * Primary content in RichText → Primary
  *
  */
@@ -781,6 +828,10 @@ declare module "@prismicio/client" {
       ProjectCardSliceDefault,
       ProjectCardSliceVariation,
       ProjectCardSlice,
+      ProjectVideoSliceDefaultPrimary,
+      ProjectVideoSliceDefault,
+      ProjectVideoSliceVariation,
+      ProjectVideoSlice,
       RichTextSliceDefaultPrimary,
       RichTextSliceDefault,
       RichTextSliceVariation,

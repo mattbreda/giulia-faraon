@@ -13,6 +13,7 @@ export const components = defineSliceZoneComponents({
   ),
   image_full: defineAsyncComponent(() => import("./ImageFull/index.vue")),
   project_card: defineAsyncComponent(() => import("./ProjectCard/index.vue")),
+  project_video: defineAsyncComponent(() => import("./ProjectVideo/index.vue")),
   rich_text: defineAsyncComponent(() => import("./RichText/index.vue")),
   video: defineAsyncComponent(() => import("./Video/index.vue")),
 });

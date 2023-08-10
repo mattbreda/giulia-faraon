@@ -5,7 +5,9 @@
     <div
       class="lg:col-start-1 lg:col-span-2 lg:max-h-screen lg:h-full lg:overflow-y-auto relative scroll-smooth no-scrollbar"
     >
-      <div class="max-lg:pt-8 lg:sticky lg:top-0 lg:pt-8 w-full bg-project-linear lg:h-[40vh]">
+      <div
+        class="max-lg:pt-8 lg:sticky lg:top-0 lg:pt-8 w-full bg-project-linear lg:h-[40vh]"
+      >
         <h1 class="text-name font-PPEditorial">Giulia Faraon</h1>
       </div>
       <div class="w-full flex flex-row mb-8 text-black pointer-events-none">
@@ -22,6 +24,13 @@
         :slices="project?.data.slices ?? []"
         :components="components"
       />
+      <div class="py-12 w-full">
+        <a
+          class="text-[2rem] font-PPEditorial"
+          href="mailto:hello@giuliafaraon.com"
+          >hello@giuliafaraon.com</a
+        >
+      </div>
     </div>
   </div>
 </template>

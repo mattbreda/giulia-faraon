@@ -28,6 +28,8 @@
         class="w-full lg:max-w-[25vw] z-20"
       />
     </TransitionGroup>
+    <Footer />
+
   </div>
 </template>
 <script setup>

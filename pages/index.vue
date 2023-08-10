@@ -3,7 +3,7 @@
     class="w-screen lg:h-screen lg:max-h-screen flex flex-col lg:grid lg:grid-cols-12 lg:gap-6 px-4 lg:px-8"
   >
     <div
-      class="lg:col-start-1 lg:col-span-3 lg:h-full lg:overflow-y-auto lg:no-scrollbar lg:scroll-smooth px-[4px] relative"
+      class="lg:col-start-1 lg:col-span-3 lg:h-full lg:overflow-y-auto no-scrollbar lg:scroll-smooth px-[4px] relative"
     >
       <div class="lg:sticky lg:top-0 max-lg:mb-20 lg:left-0 w-full">
         <GiuliaHeader />

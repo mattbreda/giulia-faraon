@@ -57,6 +57,8 @@ const { data: project } = useAsyncData("work/[uid]", () =>
 /* const settings = useSettings()
  */
 useHead({
-  title: computed(() => `${prismic.asText(project.value?.data.title)} | test}`),
+  title: computed(() => `${project.value?.data.meta_title} | Giulia Faraon`),
+  meta: { name: 'description', content: `${project.value?.data.meta_description}` }
+
 });
 </script>

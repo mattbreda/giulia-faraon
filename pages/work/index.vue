@@ -70,6 +70,11 @@ const handleCategory = (val) => {
   }
 };
 const resetCategory = () => (selectedCategories.value = []);
+
+
+useHead({
+  title: "Giulia Faraon | Work",
+});
 </script>
 <style>
 .list-move, /* apply transition to moving elements */

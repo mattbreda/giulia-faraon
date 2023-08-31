@@ -8,12 +8,12 @@
       <div class="lg:sticky lg:top-0 max-lg:mb-20 lg:left-0 w-full">
         <GiuliaHeader />
       </div>
-      <div class="lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen">
+      <div class="lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen h-64">
         <div
           class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden"
         >
           <!-- <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/> -->
-          <img :src="`/landing-images/${imgCounter}.jpg`" />
+          <img :src="`/landing-images/${imgCounter}.jpg`"  class="object-cover h-full w-full" />
         </div>
       </div>
       <div class="w-full px-[4px] flex flex-col">
@@ -85,5 +85,10 @@ onMounted(() => {
 });
 onUnmounted(() => {
   if (imgInterval) clearInterval(imgInterval);
+});
+
+useHead({
+  title: computed(() => `Giulia Faraon`),
+  meta: { name: 'description', content: `Sito portfolio di Giulia Faraon` }
 });
 </script>

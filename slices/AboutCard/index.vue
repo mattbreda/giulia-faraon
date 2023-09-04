@@ -7,7 +7,7 @@
     <h2 class="text-titolo-h2 text-purple font-TWKLausanneULight lg:pb-2">About</h2>
     <PrismicRichText :field="slice.primary.title" class="text-titolo-h2 font-TWKLausanneLight"/>
     <PrismicRichText :field="slice.primary.description" class="text-titolo-h2 font-TWKLausanneULight lg:mb-6" />
-    <NuxtLink to="/about" class="text-paragraph font-TWKLausanneLight">Approfondisci +</NuxtLink>
+    <NuxtLink to="/about" class="text-paragraph font-TWKLausanneLight  hover:underline">Approfondisci +</NuxtLink>
   </section> 
 </template>
 <script setup lang="ts">

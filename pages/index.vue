@@ -34,6 +34,7 @@
             href="mailto:hello@giuliafaraon.com"
             >hello@giuliafaraon.com</a
           >
+          <div class="font-TWKLausanneULight text-[12px]">© 2023</div>
         </div>
       </div>
     </div>
@@ -80,7 +81,7 @@ const counterHandler = () => {
 }
 onMounted(() => {
   if (!imgInterval) {
-    imgInterval = setInterval(counterHandler, 500);
+    imgInterval = setInterval(counterHandler, 1000);
   }
 });
 onUnmounted(() => {

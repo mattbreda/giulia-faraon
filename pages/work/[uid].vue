@@ -3,7 +3,7 @@
     class="w-full bg-black text-white flex flex-col lg:grid lg:grid-cols-12 lg:gap-6 px-4 lg:px-8 min-h-screen lg:h-full"
   >
     <div
-      class="lg:col-start-1 lg:col-span-2 lg:max-h-screen lg:h-full lg:overflow-y-auto relative scroll-smooth no-scrollbar"
+      class="lg:col-start-1 lg:col-span-3 lg:max-h-screen lg:h-full lg:overflow-y-auto relative scroll-smooth no-scrollbar"
     >
       <div
         class="max-lg:pt-8 lg:sticky lg:top-0 lg:pt-8 w-full bg-project-linear lg:h-[40vh]"
@@ -17,7 +17,7 @@
       <ProjectDescription :content="project?.data" class="mb-8" />
     </div>
     <div
-      class="lg:col-start-3 lg:col-span-10 lg:h-auto py-8 lg:max-h-screen lg:h-full lg:overflow-y-auto scroll-smooth no-scrollbar"
+      class="lg:col-start-4 lg:col-span-9 lg:h-auto py-8 lg:max-h-screen lg:h-full lg:overflow-y-auto scroll-smooth no-scrollbar"
     >
       <SliceZone
         wrapper="main"

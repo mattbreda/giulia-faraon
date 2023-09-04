@@ -21,7 +21,7 @@ const colorClass = computed(() => {
     return "hover:bg-green";
   } else if (props.color === "blue") {
     return "hover:bg-blue";
-  } else if(props.color === "yellor") {
+  } else if(props.color === "yellow") {
     return "hover:bg-yellow"
   } else {
     return "hover:bg-green-400";

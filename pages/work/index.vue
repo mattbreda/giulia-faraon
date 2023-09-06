@@ -1,7 +1,7 @@
 <template>
   <div class="w-full px-4 lg:px-8">
     <GiuliaHeader />
-    <div v-if="categories.length" class="flex flex-row pt-8 lg:pt-0">
+    <div v-if="categories.length" class="flex flex-row pt-8 lg:pt-0 max-lg:hidden">
       <SimpleChip
         label="All"
         @click="resetCategory"

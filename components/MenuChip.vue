@@ -3,7 +3,7 @@
     class="lg:ml-4 text-titolo-h3 lg:text-titolo-h2 font-TWKLausanneULight py-1.5 px-4 rounded-2xl shadow-menu-buttons transition-all duration-600"
     :class="[ activeColor ? `background-${color}`:'bg-white', colorClass,]"
   >
-    {{ label }} 
+    {{ label }}
   </div>
 </template>
 <script setup>
@@ -28,7 +28,11 @@ const colorClass = computed(() => {
   }
 });
 const activeColor = computed(() => {
-  return route.fullPath === props.path
+  if(route.name === 'work-uid' && props.label.toLocaleLowerCase() === 'works' ) {
+    return true
+  } else {
+    return route.fullPath === props.path
+  }
 })
 </script>
 <style>

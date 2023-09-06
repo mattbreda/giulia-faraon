@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 
   prismic: {
     endpoint: 'giulia-faraon',
-    preview: '/api/preview',
+    preview: false,
     clientConfig: {
       routes: [
         {

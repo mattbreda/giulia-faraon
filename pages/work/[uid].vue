@@ -42,7 +42,7 @@ import { components } from "~/slices";
 
 const prismic = usePrismic();
 const route = useRoute();
-const { data: project } = useAsyncData("work/[uid]", () =>
+const { data: project } = useAsyncData(route.params.uid, () =>
   prismic.client.getByUID("project", route.params.uid)
 );
 /* const { data: latestprojects } = useAsyncData('$talents', () =>

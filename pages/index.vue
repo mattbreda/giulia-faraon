@@ -3,14 +3,14 @@
     class="w-screen lg:h-screen lg:max-h-screen flex flex-col lg:grid lg:grid-cols-12 lg:gap-6 px-4 lg:px-8"
   >
     <div
-      class="lg:col-start-1 lg:col-span-3 lg:h-full lg:overflow-y-auto no-scrollbar lg:scroll-smooth px-[4px] relative"
+      class="lg:col-start-1 lg:col-span-3 lg:h-full lg:overflow-y-auto no-scrollbar lg:scroll-smooth lg:px-[4px] relative"
     >
       <div class="lg:sticky lg:top-0 max-lg:mb-20 lg:left-0 w-full">
         <GiuliaHeader />
       </div>
-      <div class="lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen h-64">
+      <div class="lg:hidden col-start-4 col-span-9 py-8 max-h-screen h-64">
         <div
-          class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden"
+          class="w-full h-full shadow-simple-inner rounded-lg overflow-hidden"
         >
           <!-- <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/> -->
           <img :src="`/landing-images/${imgCounter}.jpg`"  class="object-cover h-full w-full" />
@@ -40,13 +40,13 @@
     </div>
     <div class="max-lg:hidden col-start-4 col-span-9 h-full py-8 max-h-screen">
       <div
-        class="w-full h-full shadow-simple-inner h-full rounded-lg overflow-hidden"
+        class="w-full h-full shadow-simple-inner h-full rounded-lg"
       >
         <!-- <nuxt-img
           src="/images/test-progetti.jpg"
           class="object-cover h-full w-full"
         /> -->
-        <img :src="`/landing-images/${imgCounter}.jpg`" />
+        <img :src="`/landing-images/${imgCounter}.jpg`" class="h-full w-full object-cover object-center rounded-lg"/>
       </div>
     </div>
   </div>

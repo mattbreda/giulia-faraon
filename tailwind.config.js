@@ -39,7 +39,7 @@ module.exports = {
       name: ['3.5rem', '4.1875rem'],
       'titolo-grande': ['1.5rem', '1.8125rem'],
       'titolo-h1': ['1.25rem', '1.5rem'],
-      'titolo-h2': ['1.0625rem', '1.25rem'],
+      'titolo-h2': ['1.0625rem', '1.45rem'],
       'titolo-h3': ['0.875rem', '1rem'],
       paragraph: ['0.75rem', '0.875rem'],
       note: ['0.625rem','0.75.rem']

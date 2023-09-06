@@ -41,16 +41,18 @@
         </ul>
       </div>
       <div
-        class="w-full lg:px-4 text-titolo-h2 font-TWKLausanneULight  lg:border-r max-lg:border-b border-black max-lg:pt-8 max-lg:pb-4"
+        class="w-full lg:px-4 text-titolo-h2 font-TWKLausanneULight lg:border-r max-lg:border-b border-black max-lg:pt-8 max-lg:pb-4"
       >
         <h2 class="text-titolo-grande font-TWKLausanneULight mb-8">
           Side project
         </h2>
 
         <PrismicRichText :field="about.data.testo_side_project" />
+        <a href="https://www.instagram.com/funky_fermenteria/" target="_blank" class="pt-4 text-paragraph font-TWKLausanneLight  hover:underline">Approfondisci +</a>
+
       </div>
-      <div class="w-full lg:px-4 text-titolo-h2 font-TWKLausanneULight">
-        <NuxtImg :src="about.data.foto.url" class="mb-4 w-full" />
+      <div class="w-full max-lg:pt-8 lg:px-4 text-titolo-h2 font-TWKLausanneULight">
+        <NuxtImg :src="about.data.foto.url" class="mb-4 w-full rounded-lg" />
       </div>
     </div>
     <Footer />

@@ -46,6 +46,6 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-#prismic-toolbar-v2 {
+/* #prismic-toolbar-v2 {
   visibility: hidden;
-}
+} */

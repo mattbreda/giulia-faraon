@@ -316,6 +316,19 @@ interface ProjectDocumentData {
    */
   is_in_homepage: prismic.BooleanField;
   /**
+   * relatedProjects field in *Project*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.relatedprojects[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/group
+   *
+   */
+  relatedprojects: prismic.GroupField<
+    Simplify<ProjectDocumentDataRelatedprojectsItem>
+  >;
+  /**
    * Slice Zone field in *Project*
    *
    * - **Field Type**: Slice Zone
@@ -359,6 +372,22 @@ interface ProjectDocumentData {
    *
    */
   meta_title: prismic.KeyTextField;
+}
+/**
+ * Item in Project → relatedProjects
+ *
+ */
+export interface ProjectDocumentDataRelatedprojectsItem {
+  /**
+   * firstProject field in *Project → relatedProjects*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project.relatedprojects[].firstproject
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  firstproject: prismic.ContentRelationshipField;
 }
 /**
  * Slice for *Project → Slice Zone*
@@ -805,6 +834,7 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PageDocument,
       ProjectDocumentData,
+      ProjectDocumentDataRelatedprojectsItem,
       ProjectDocumentDataSlicesSlice,
       ProjectDocument,
       AllDocumentTypes,

@@ -69,6 +69,18 @@
           "placeholder_false": "false"
         }
       },
+      "relatedprojects": {
+        "type": "Group",
+        "config": {
+          "label": "relatedProjects",
+          "fields": {
+            "firstproject": {
+              "type": "Link",
+              "config": { "label": "firstProject", "select": "document" }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

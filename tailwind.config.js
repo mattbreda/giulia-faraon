@@ -13,7 +13,8 @@ module.exports = {
       backgroundImage: {
         'white-linear': 'linear-gradient(180deg, #FFFFFF 60.16%, rgba(255, 255, 255, 0) 92.97%)',
         'about-linear':'linear-gradient(180deg, #FFFFFF 0%, #E4E7FF 100%)',
-        'project-linear': 'linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)'
+        'project-linear': 'linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%)',
+        'project-linear-reverse': 'linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%)'
       },
       boxShadow: {
         'simple': '0px 1px 5px 0px #0000004D',
@@ -28,6 +29,7 @@ module.exports = {
         'green': '#D3EDC6',
         'blue': '#E4E7FF',
         'yellow': '#FFF6A3',
+        'white':'#fff'
       },
       fontFamily: {
         PPEditorial: ['PPEditorialNew', 'serif'],
@@ -40,7 +42,7 @@ module.exports = {
       'titolo-grande': ['1.5rem', '1.8125rem'],
       'titolo-h1': ['1.25rem', '1.5rem'],
       'titolo-h2': ['1.0625rem', '1.45rem'],
-      'titolo-h3': ['0.875rem', '1rem'],
+      'titolo-h3': ['0.875rem', '1.2rem'],
       paragraph: ['0.75rem', '0.875rem'],
       note: ['0.625rem','0.75.rem']
     }

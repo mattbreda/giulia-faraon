@@ -37,6 +37,17 @@ body {
   filter: blur(1rem);
 }
 
+
+.fade-active,
+.fadeactive {
+  transition: all 0.4s;
+}
+.fader-from,
+.fade-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

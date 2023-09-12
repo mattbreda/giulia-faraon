@@ -17,8 +17,9 @@ defineProps(
   <section
     :data-slice-type="slice.slice_type"
     :data-slice-variation="slice.variation"
+    class="rounded-lg"
   >
-  <video class="w-full rounded-lg " controls>
+  <video class="w-full rounded-lg" controls>
     <source :src="slice.primary.video.url" type="video/mp4"/>
     </video>
   </section>

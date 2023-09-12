@@ -4,7 +4,7 @@
     :data-slice-variation="slice.variation"
     class="w-full"
   >
-    <nuxt-img :src="slice.primary.immagine.url" class="object-cover h-full w-full rounded-lg lg:mb-6"/>
+    <nuxt-img :src="slice.primary.immagine.url" class="object-cover h-full w-full rounded-lg max-lg:mb-4 lg:mb-6"/>
   </section>
 </template>
 <script setup lang="ts">

@@ -6,11 +6,11 @@
       class="lg:col-start-1 lg:col-span-4 lg:max-h-screen lg:h-full lg:overflow-y-auto relative scroll-smooth no-scrollbar"
     >
       <div
-        class="max-lg:pt-8 lg:sticky lg:top-0 lg:pt-8 w-full bg-project-linear lg:h-[40vh]"
+        class="max-lg:pt-8 lg:sticky lg:top-0 lg:pt-8 w-full bg-project-linear lg:h-[40vh] max-lg:mb-14"
       >
         <h1 class="text-name font-PPEditorial">Giulia Faraon</h1>
       </div>
-      <div class="w-full flex flex-row mb-8 text-black">
+      <div class="w-full flex flex-row mb-8 text-black max-lg:hidden">
         <SimpleChip label="Info" :isActive="!isWorks" @click="toggleWorks(false)"/>
         <SimpleChip label="Works" :isActive="isWorks"   @click="toggleWorks(true)"/>
       </div>
@@ -62,9 +62,11 @@ const isWorks = ref(false)
 const toggleWorks = ( val: boolean ) => {
   isWorks.value = val
 }
+
 const { data: project } = useAsyncData(route.params.uid, () =>
   prismic.client.getByUID("project", route.params.uid)
 );
+
 const { data: projects } = useAsyncData("$projects", () =>
   prismic.client.getAllByType("project", {
     orderings: [

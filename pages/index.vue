@@ -27,6 +27,7 @@
           :content="card"
           :key="card.id"
         />
+        <KumbuchaCard />
         <PhotoCard key="photo-card1" class="photo-card" />
         <div class="py-12">
           <a

@@ -19,7 +19,7 @@ defineProps(
     :data-slice-variation="slice.variation"
     class="rounded-lg"
   >
-  <video class="w-full rounded-lg" controls>
+  <video class="w-full rounded-lg mb-4 lg:mb-6" controls>
     <source :src="slice.primary.video.url" type="video/mp4"/>
     </video>
   </section>

@@ -4,6 +4,7 @@
       src="/images/pic-giulia.jpg"
       class="object-cover w-full"
       alt="Foto di Giulia Faraon"
+      format="webp"
     />
     <NuxtLink to="/about" class="mt-6"><SmallButton label="About" color="blue"></SmallButton></NuxtLink>
   </div>

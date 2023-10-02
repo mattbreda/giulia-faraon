@@ -4,8 +4,8 @@
     :data-slice-variation="slice.variation"
     class="w-full lg:grid lg:grid-cols-2 lg:gap-x-6 mb-4 lg:mb-6"
   >
-    <nuxt-img :src="slice.primary.prima_immagine.url" class="object-cover h-full w-full rounded-lg max-lg:mb-4"/>
-    <nuxt-img :src="slice.primary.seconda_immagine.url" class="object-cover h-full w-full rounded-lg	"/>
+    <nuxt-img format="webp" :src="slice.primary.prima_immagine.url" class="object-cover h-full w-full rounded-lg max-lg:mb-4"/>
+    <nuxt-img format="webp" :src="slice.primary.seconda_immagine.url" class="object-cover h-full w-full rounded-lg	"/>
   </section>
 </template>
 <script setup lang="ts">

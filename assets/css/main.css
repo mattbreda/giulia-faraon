@@ -6,16 +6,19 @@
 @font-face {
   font-family: "PPEditorialNew";
   src: url("/fonts/PPEditorialNew-Ultralight.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TWKLausanne-200";
   src: url("/fonts/TWKLausanne-200.woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TWKLausanne-400";
   src: url("/fonts/TWKLausanne-400.woff2");
+  font-display: swap;
 }
 
 body {

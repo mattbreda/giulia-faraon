@@ -13,7 +13,7 @@
           class="w-full h-full shadow-simple-inner rounded-lg overflow-hidden"
         >
           <!-- <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/> -->
-          <img :src="`/landing-images/${imgCounter}.jpg`"  class="object-cover h-full w-full" />
+          <img :src="`/landing-images/${imgCounter}.jpg`"  class="object-cover h-full w-full" alt="Esempi di produzioni di Giulia Faraon"/>
         </div>
       </div>
       <div class="w-full px-[4px] flex flex-col">
@@ -91,6 +91,6 @@ onUnmounted(() => {
 
 useHead({
   title: computed(() => `Giulia Faraon`),
-  meta: { name: 'description', content: `Sito portfolio di Giulia Faraon` }
+  meta: { name: 'description', content: `Aiuto i brand a posizionarsi nel mercato, individuando i canali di comunicazione migliori e definendo insieme una strategia di comunicazione efficace.` }
 });
 </script>

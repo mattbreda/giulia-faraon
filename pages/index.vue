@@ -13,7 +13,7 @@
           class="w-full h-full shadow-simple-inner rounded-lg overflow-hidden"
         >
           <!-- <nuxt-img src="/images/test-progetti.jpg" class="object-cover h-full w-full"/> -->
-          <img :src="`/landing-images/${imgCounter}.jpg`"  class="object-cover h-full w-full" alt="Esempi di produzioni di Giulia Faraon"/>
+          <img :src="`/landing-images/${imgCounter}.webp`"  class="object-cover h-full w-full" alt="Esempi di produzioni di Giulia Faraon"/>
         </div>
       </div>
       <div class="w-full px-[4px] flex flex-col">

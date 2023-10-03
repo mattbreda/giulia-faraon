@@ -15,6 +15,11 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      script: [ {
+        src: 'https://consent.cookiebot.com/uc.js?cbid=4bd74c92-0741-42ce-9cc5-f752aa890ed4',
+        id: 'Cookiebot',
+        type: 'text/javascript'
+      }]
     },
   },
 

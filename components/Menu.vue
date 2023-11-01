@@ -3,7 +3,7 @@
     <NuxtLink v-for="link in menuVoices" :key="link.labek" :to="link.path" class="h-fit">
       <MenuChip :label="link.label" :color="link.color" :path="link.path"/>
     </NuxtLink>
-    <a href="mailto:giulia.faraon@gmail.com" class="h-content">
+    <a href="mailto:hello@giuliafaraon.com" class="h-content">
       <MenuChip label="Contatti" color="yellow" />
     </a>
   </nav>

@@ -42,8 +42,8 @@
       <div class="py-12 w-full">
         <a
           class="text-[2rem] font-PPEditorial"
-          href="mailto:giulia.faraon@gmail.com"
-          >giulia.faraon@gmail.com</a
+          href="mailto:hello@giuliafaraon.com"
+          >hello@giuliafaraon.com</a
         >
       </div>
     </div>

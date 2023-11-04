@@ -19,10 +19,10 @@
     <TransitionGroup
       name="list"
       tag="div"
-      class="flex flex-col lg:grid lg:grid-cols-4 w-full lg:gap-x-6"
+      class="flex flex-col lg:grid lg:grid-cols-4 w-full lg:gap-6 lg:auto-rows-fr"
     >
       <ProjectCardSimple
-        v-for="card in filteredProjects"
+        v-for="card in sortedProjects"
         :content="card"
         :key="card.id"
         class="w-full lg:max-w-[25vw] z-20"
@@ -40,7 +40,16 @@ const { data: projects } = useAsyncData("$projects", () =>
 );
 
 const selectedCategories = ref([]);
-
+const sortedByOrd = (a,b) => {
+  const aOrderValue = a.data.order.length? Number(a.data.order[0].text) : projects.value.length
+  const bOrderValue = b.data.order.length? Number(b.data.order[0].text) : projects.value.length
+  if(aOrderValue>bOrderValue) {
+    return 1
+  } else if(aOrderValue<bOrderValue) {
+    return -1
+  }
+  return 0
+}
 const categories = computed(() => {
   if (!projects.value || !projects.value.length) {
     return [];
@@ -60,6 +69,10 @@ const filteredProjects = computed(() => {
     return projects.value.filter(p=>selectedCategories.value.includes(p.data.type))
   }
 });
+
+const sortedProjects = computed(() => {
+  return filteredProjects.value.sort((a,b)=>sortedByOrd(a,b))
+})
 
 const handleCategory = (val) => {
   const indexOfCat = selectedCategories.value.indexOf(val);

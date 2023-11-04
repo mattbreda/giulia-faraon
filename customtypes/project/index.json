@@ -6,7 +6,12 @@
   "status": true,
   "json": {
     "Main": {
-      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "title": {
         "type": "StructuredText",
         "config": {
@@ -76,9 +81,21 @@
           "fields": {
             "firstproject": {
               "type": "Link",
-              "config": { "label": "firstProject", "select": "document" }
+              "config": {
+                "label": "firstProject",
+                "select": "document"
+              }
             }
           }
+        }
+      },
+      "order": {
+        "type": "StructuredText",
+        "config": {
+          "label": "order",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "slices": {
@@ -86,11 +103,21 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "double_horizontall_images": { "type": "SharedSlice" },
-            "double_vertical_images": { "type": "SharedSlice" },
-            "image_full": { "type": "SharedSlice" },
-            "video": { "type": "SharedSlice" },
-            "project_video": { "type": "SharedSlice" }
+            "double_horizontall_images": {
+              "type": "SharedSlice"
+            },
+            "double_vertical_images": {
+              "type": "SharedSlice"
+            },
+            "image_full": {
+              "type": "SharedSlice"
+            },
+            "video": {
+              "type": "SharedSlice"
+            },
+            "project_video": {
+              "type": "SharedSlice"
+            }
           }
         }
       }
@@ -105,7 +132,10 @@
       },
       "meta_image": {
         "config": {
-          "constraint": { "height": 1260, "width": 2400 },
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
           "label": "Meta Image",
           "thumbnails": []
         },
